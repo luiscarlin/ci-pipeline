@@ -29,6 +29,33 @@ vagrant up
 - no steps yet
 
 
-## Tools Used
+## Goals
 
-## Features
+- Faster continuous delivery
+- More jobs run in parallel
+- Faster disaster recovery
+- Test environment consistency
+- Every build is shippable for all deployable configurations
+- Increse number of builds per day
+- Jobs on all supported test environment combinations
+- Track everything and report details on each run
+- Create test environments with one command
+- Self-service cloud-based engine
+- Deploy lastest as close to production as possible for final verification
+- build environments defined as Docker containers, owned and maintained as Dockerfiles by the dev teams that use them.
+- the ability to pre-generate build pipelines for known technology stacks so teams can maintain continuous delivery build pipelines running the first day they create a code repository.
+
+## How to do it?
+
+- Everything is code:
+  - server configuration
+  - pipeline jobs
+  - test environments
+- Jenkins (Open Source Version)
+- The Job DSL plugin for Jenkins
+- The Build Flow plugin for Jenkins
+- Engineering ingenuity to glue our various components together
+
+## Caveats
+
+- No Windows test environments
