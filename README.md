@@ -59,3 +59,9 @@ vagrant up
 ## Caveats
 
 - No Windows test environments
+
+## Jenkins
+- Jenkins master server (Java process)
+- Jenkins master data (Plugins, Job Definitions, etc)
+- NGINX web proxy (for SSL certs)
+- Build slave agents (machines either being SSH’d into, or JNLP)

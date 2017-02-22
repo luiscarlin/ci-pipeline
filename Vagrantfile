@@ -5,7 +5,7 @@
 VAGRANTFILE_API_VERSION = "2"
 BASE_HOSTNAME = "vagrant"
 BASE_IP = "192.168.0."
-NUM_MACHINES = 2
+NUM_MACHINES = 1
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
@@ -34,7 +34,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
           ansible.sudo = true
         end
 
-        machine.vm.provision :shell, inline: "echo Finsihed"
+        machine.vm.provision :shell, inline: "echo Finished!"
       end
     end
   end

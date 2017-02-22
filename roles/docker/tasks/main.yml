@@ -1,0 +1,25 @@
+---
+- name: Setup docker-engine yum repository
+  yum_repository:
+    name: dockerrepo
+    description: Docker Repository
+    baseurl: https://yum.dockerproject.org/repo/main/centos/$releasever/
+    enabled: yes
+    gpgcheck: yes
+    gpgkey: https://yum.dockerproject.org/gpg
+
+- name: Install docker engine
+  yum:
+    name: docker-engine
+    state: latest
+    enablerepo: dockerrepo
+
+- name: Start docker engine service on boot
+  service:
+    name: docker
+    enabled: yes
+
+- name: Start the docker engine service
+  service:
+    name: docker
+    state: started
