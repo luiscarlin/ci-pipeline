@@ -8,8 +8,8 @@ RUN useradd -d "/var/jenkins_home" -u 1000 -m -s /bin/bash jenkins
 RUN mkdir -p /var/log/jenkins
 RUN chown -R jenkins:jenkins /var/log/jenkins
 
-# Make the log folder a mount
-VOLUME ["/var/log/jenkins"]
+# Make the log folder a mount and jenkins home
+VOLUME ["/var/log/jenkins", "/var/jenkins_home"]
 
 # Set Jenkins as the user opf this container
 USER jenkins
