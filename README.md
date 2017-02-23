@@ -69,4 +69,7 @@ vagrant up
 ```bash
 # 1 GB memory + base pool of handlers = 100 + cap on handlers = 300
 docker run -p 8080:8080 --name=jenkins-master -d --env JAVA_OPTS="-Xmx1024m" --env JENKINS_OPTS="--handlerCountStartup=100 --handlerCountMax=300" jenkins
+
+# using the data-volume
+docker run -p 8080:8080 -p 50000:50000 --name=jenkins-master --volumes-from=jenkins-data -d myjenkins
 ```
