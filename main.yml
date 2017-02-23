@@ -1,5 +1,6 @@
 ---
 - name: Configure servers with re-requirements
   hosts: all
+  become: true
   roles:
     - docker

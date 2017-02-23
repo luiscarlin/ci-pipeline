@@ -15,6 +15,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       machine.vm.hostname = "#{BASE_HOSTNAME}#{id}"
       machine.vm.network "private_network", ip: "#{BASE_IP}#{10+id}"
 
+      if id == 1
+        machine.vm.network :forwarded_port, guest: 8080, host: 8080
+      end
+
       machine.vm.provider :virtualbox do |v|
         v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
         v.customize ["modifyvm", :id, "--memory", 1024]
